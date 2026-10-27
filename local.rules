@@ -1,0 +1,10 @@
+# CodeAlpha Task 4 - local Snort rules
+# Verify compatibility with your installed Snort version before use.
+# Alert on ICMP echo requests (ping) entering the monitored network.
+alert icmp any any -> $HOME_NET any (msg:"CODEALPHA ICMP echo request observed"; itype:8; sid:1000001; rev:1;)
+
+# Alert on TCP SYN packets directed to SSH; repeated events may indicate probing.
+alert tcp any any -> $HOME_NET 22 (msg:"CODEALPHA TCP traffic to SSH observed"; flags:S; sid:1000002; rev:1;)
+
+# Alert on TCP SYN packets directed to common web service ports.
+alert tcp any any -> $HOME_NET [80,443] (msg:"CODEALPHA TCP SYN to web service observed"; flags:S; sid:1000003; rev:1;)
