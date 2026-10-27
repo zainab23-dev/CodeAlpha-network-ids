@@ -1,4 +1,4 @@
-# Task 4 — Network Intrusion Detection System (Snort)
+ — Network Intrusion Detection System (Snort)
 
 ## Objective
 Set up a network-based IDS, detect suspicious traffic using rules, generate alerts, and document a response process.
